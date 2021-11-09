@@ -12,7 +12,7 @@ test = {   'name': 'beam_search',
                                                '...   # Input and output\n'
                                                '...   src, src_lengths = batch.src\n'
                                                '...   # Predict\n'
-                                               '...   prediction, _ = beam_searcher.beam_search(src, src_lengths, K)\n'
+                                               '...   prediction = beam_searcher.beam_search(src, src_lengths, K)\n'
                                                '...   # Convert to string\n'
                                                "...   prediction = ' '.join([TGT.vocab.itos[token] for token in prediction])\n"
                                                "...   prediction = prediction.lstrip('<bos>').rstrip('<eos>').strip()\n"
@@ -20,7 +20,6 @@ test = {   'name': 'beam_search',
                                                "...   ground_truth = ground_truth.lstrip('<bos>').rstrip('<eos>').strip()\n"
                                                '...   if ground_truth == prediction:\n'
                                                '...     correct += 1\n'
-                                               '...     break\n'
                                                '...   total += 1\n'
                                                '...   \n'
                                                '>>> correct > 0\n'
